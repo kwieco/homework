@@ -1,0 +1,28 @@
+body {
+    background-color: grey;
+}
+div {
+    background-color: lightgreen;
+    width: 50%;
+}
+.menu {
+    border: black;
+    border-style: solid;
+    border-width: 1px;
+    width: unset;
+    display:inline-block;
+}
+/* h2 {
+    font-size: 20px;
+    color: red;
+
+}
+#subtitle2 {
+    font-size: 18px;
+    color: blue;
+}
+.subtitle3 {
+    font-size: 16px;
+    color: coral;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+} */
