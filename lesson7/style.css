@@ -1,0 +1,138 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: system-ui;
+    padding-top: 20px;
+}
+a {
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid #413fb5;
+}
+div {
+    font-size: 12px;
+}
+
+span {
+    font-size: 16px;
+}
+.logo {
+    padding-bottom: 35px;
+}
+
+.wrapper {
+    display: flex;
+    width: 45%;
+    height: auto;
+    min-height: 500px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    /* box-shadow: 0 0 5px red;
+    outline: 1px solid black;     */
+
+}
+
+.form-wrapper {
+    padding: 10px;
+    width: 100%;
+
+}
+.image {
+    background-image: url("./images/gym.jpg");
+    width: 50vw;
+    background-size: cover;
+    background-position: center;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.social-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid  rgb(67, 80, 255);
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.social-button:hover {
+    box-shadow: 0 0 4px rgb(40, 50, 189) ;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(89, 88, 88);
+    padding: 20px 0px;
+    }
+
+.divider-line {
+    background-color:rgb(89, 88, 88);
+    width: 30%;
+    height: 1px;
+    display: flex;    
+
+}
+.text-line {
+    font-size: 10px;
+}
+.row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+}
+.row input:first-of-type {
+    margin-right: 10px;
+
+}
+input {
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid darkgray;
+}
+
+.terms {
+    display: flex;
+    justify-content: space-between;
+}
+input[type="checkbox"] {
+    width: auto;
+}
+
+.consent {
+    display: flex;
+    font-size: 10px;
+    width: auto;
+}
+
+button {
+    padding: 10px 30px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #413fb5;
+    border: 1px solid #413fb5;
+    margin-top: 20px;
+    color: #fff;
+}
+button:hover {
+    background-color: #fff;
+    transition: 1.5s;
+    color: #413fb5;
+    box-shadow: 0 0 4px #413fb5;
+    font-weight: bold;
+}
+
+.footer {
+    margin-top: 20px;
+    font: optional;
+}
