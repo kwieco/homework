@@ -16,7 +16,20 @@ div {
 }
 
 span {
-    font-size: 16px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.text-line {
+    font-weight: 800;
+    cursor: pointer;
+    font-size: 10px;
+}
+.terms {
+    margin: 2px 0px 4px 10px;
+}
+h3 {
+    margin-top: 0;
 }
 .logo {
     padding-bottom: 35px;
@@ -29,13 +42,11 @@ span {
     min-height: 500px;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 5px;
-    /* box-shadow: 0 0 5px red;
-    outline: 1px solid black;     */
-
+    box-shadow: 0px 0px 7px rgba(100, 96, 106, 0.2);
 }
 
 .form-wrapper {
-    padding: 10px;
+    padding: 30px 20px;
     width: 100%;
 
 }
@@ -57,6 +68,10 @@ span {
     padding: 5px 10px;
     box-sizing: border-box;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.social-button:first-of-type {
     margin-bottom: 10px;
 }
 
@@ -77,21 +92,17 @@ span {
     width: 30%;
     height: 1px;
     display: flex;    
+}
 
-}
-.text-line {
-    font-size: 10px;
-}
 .row {
     display: flex;
     width: 100%;
     justify-content: space-between;
-
 }
 .row input:first-of-type {
     margin-right: 10px;
-
 }
+
 input {
     margin-bottom: 15px;
     width: 100%;
@@ -105,8 +116,10 @@ input {
     display: flex;
     justify-content: space-between;
 }
+
 input[type="checkbox"] {
     width: auto;
+    cursor: pointer;
 }
 
 .consent {
@@ -121,12 +134,13 @@ button {
     border-radius: 8px;
     background-color: #413fb5;
     border: 1px solid #413fb5;
-    margin-top: 20px;
     color: #fff;
+    cursor: pointer;
 }
+
 button:hover {
     background-color: #fff;
-    transition: 1.5s;
+    transition: 0.15s;
     color: #413fb5;
     box-shadow: 0 0 4px #413fb5;
     font-weight: bold;
