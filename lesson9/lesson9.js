@@ -132,9 +132,11 @@
 	drivingLicence: true,};
 	
 // d) z obiektu personDetails zrób consol.log samego wieku,
-	console.log(personDetails.age) lub personDetails.age
+	console.log(personDetails.age) //or
+	 personDetails.age
 // e) zrób console.log całego obiektu,
-	personDetails lub console.log(personDetails)
+	personDetails //or 
+	console.log(personDetails)
 
 // Napisz te same funkcje co wyżej ale dodając wartości jako argumenty podczas wywołania funkcji, czyli:
 // a) dodającą dwie liczby,
@@ -168,7 +170,7 @@
 	
 // f) zwracającej dwa złączone stringi podane w dwóch argumentach,
 	function twoStrings(firstString, secondString) {
-	return firstString + secondString}
+	return firstString + secondString }
 	
 	twoStrings("Siemanko! ", "Janko.")
 	
