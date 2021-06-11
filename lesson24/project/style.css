@@ -1,0 +1,63 @@
+#content {
+    background-color: greenyellow;
+}
+button {
+    margin: 10px;
+    height: 50px;
+    width: 100px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+#nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.1s;
+    width: 17%;
+    box-sizing: border-box;
+    margin: 5px;
+    background-color: limegreen;
+} 
+
+.card img {
+    width: 100%;
+    filter: grayscale(100%)
+}
+
+.card:hover {
+    transform: scale(1.05);
+    filter: none;
+}
+
+/* nie wiem czego nie działa: miało koloryzować po najechaniu na karte */
+
+#container {
+    padding: 2px 16px;
+}
+
+#lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
