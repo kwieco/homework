@@ -1,0 +1,59 @@
+<html>
+<style>
+    #nawigacja {
+        display: flex;
+    }
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        width: 20%;
+        box-sizing: border-box;
+        margin: 5px;
+    }
+    .hidden {
+        display: none;
+    }
+    .card img {
+        width: 100%
+    }
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+    .container {
+        padding: 2px 16px;
+    }
+    #lista {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<body>
+    <h1>Lista Postaci Rick and Morty</h1>
+    <h3>Pełna lista zawiera <span id="liczba-postaci"></span> postaci</h3>
+    <div id="nawigacja">
+        <h4>Aktualna strona to <span id="aktualna-strona"></span> na <span id="ilosc-stron"></span></h4>
+        <button id="prev">Poprzednia</button>
+        <button id="next">Następna</button>
+        <input type="text" id="filter" placeholder="Wpisz imię" />
+    </div>
+    <include src="./components/Dummy.html"></include>
+    <div id="lista">
+    </div>
+    <script>
+        function includeHTML() {
+            const $includes = document.getElementsByTagName('include')
+            Array.from($includes).forEach(async $include => {
+                const file = $include.getAttribute('src')
+                const htmlFile = await fetch(file)
+                const htmlText = await htmlFile.text()
+                console.log('htmlText', htmlText)
+            })
+        }
+        includeHTML()
+    </script>
+    <script src="index.js">
+    </script>
+</body>
+</html>
