@@ -12,7 +12,7 @@ export const MainSections = styled.div`
     height: 500px;
     margin: 30px auto;
 `
-
+ 
 export const ClockHolder = styled.div`
     width: 100%;
     margin: 30px auto;

@@ -1,12 +1,18 @@
 import React from 'react'
-
+import { Stopwatch2, StopwatchBtnRed, StopwatchBtnGre, StopwatchBtnYel } from './stopWatch.style';
 
 function BtnComponent(props) {
     return (
-        <div>
-            <button className='stopwatch-btn stopwatch-btn-gre' onClick={props.start}>Start</button>          
-        </div>
+        <Stopwatch2>
+            
+            <StopwatchBtnGre  onClick={props.start}>Start</StopwatchBtnGre>
+            <StopwatchBtnRed  onClick={props.stop}>Stop</StopwatchBtnRed>
+            <StopwatchBtnYel  onClick={props.reset}>Reset</StopwatchBtnYel>
+            <StopwatchBtnGre onClick={props.resume}>Resume</StopwatchBtnGre>
+                     
+        </Stopwatch2>
     );
 }
 
 export default BtnComponent
+ 

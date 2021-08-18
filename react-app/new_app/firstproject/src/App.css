@@ -1,5 +1,5 @@
 body {
-    background: #2c3E50;
+    background: #021e3a;
 }
 
 *{
@@ -10,7 +10,7 @@ body {
 
 .main-section {
     background: transparent;
-    max-width: 600px;
+    max-width: 750px;
     width: 90%;
     height: 500px;
     margin: 30px auto;
@@ -27,16 +27,16 @@ body {
     padding: 60px 0px;
     text-align: center;
 }
-.span {
-    background: #00aba9;
-    color: white;
-    display: inline-block;
-    font-family: monospace;
-    font-size: 22px;
-    padding: 20px;
-    border-radius: 5px;
-    width: 70px;
-}
+   .stopwatch.div.span {
+        background: #00aba9;
+        color: white;
+        display: inline-block;
+        font-family: monospace;
+        font-size: 22px;
+        padding: 20px;
+        border-radius: 5px;
+        width: 70px;
+    }
 
 .stopwatch-btn {
     background: white;
@@ -59,6 +59,11 @@ body {
 .stopwatch-btn-gre {
     border: 2px solid #00aba9;
     color: #00aba9;
+}
+
+.stopwatch-btn-red {
+    border: 2px solid #c85454;
+    color: #c85454;
 }
 
 .stopwatch-btn-red:hover {

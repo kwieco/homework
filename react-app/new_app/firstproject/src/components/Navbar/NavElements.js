@@ -6,11 +6,12 @@ export const Nav = styled.nav`
     background: #000;
     height: 50px;
     display: flex;
+    position: sticky;
     justify-content: space-between;
     padding: 0.5rem calc((100vw - 1000px) /2);
     z-index: 10;       
 `
-
+ 
 export const NavLink = styled(Link)`
     color: #FFFF00;
     display: flex;
@@ -37,7 +38,7 @@ export const Bars = styled(FaBars)`
         font-size: 1.8rem;
         cursor: pointer;
     }
-`
+` 
 
 export const NavMenu = styled.div`
     display: flex;

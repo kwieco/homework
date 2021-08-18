@@ -1,18 +1,32 @@
 import React, {useState} from 'react';
 import DisplayComponent from '../components/stopwatch/DisplayComponent';
 import BtnComponent from '../components/stopwatch/BtnComponent';
-import '../App.css'
+import { MainSections, ClockHolder, Body} from '../components/stopwatch/stopWatch.style';
+
 
 function Stoper () {
 	const [time, setTime] = useState({ms:0, s:0, m:0, h:0});
+	const [interval, setInt] = useState();
+	
 
 	const start = () => {
 		run();
-		setInterval(run,10);
+		setInt(setInterval(run,10));
 	};
 
-	let updatedMs = time.ms, updatedS = time.s, updatedM = time.m, updatedH = time.h;
+	const stop = () => {
+		clearInterval(interval);
 
+	};
+
+	const reset = () => {
+		clearInterval(interval);
+		setTime({ms:0, s:0, m:0, h:0}) 
+	};
+
+	const resume = () => start();
+	let updatedMs = time.ms, updatedS = time.s, updatedM = time.m, updatedH = time.h;
+ 
 	const run = () => {
 		if (updatedM === 60) {
 			updatedH++;
@@ -30,16 +44,16 @@ function Stoper () {
 		return setTime({ms:updatedMs, s:updatedS, m:updatedM, h:updatedH});
 	};
     return (
-        <div className='main-section'>
-			<div className='clock-holder'>
-				<div className='stopwatch'>
+		<Body>
+        <MainSections>
+			<ClockHolder>
 					<DisplayComponent time={time}  />
-					<BtnComponent start={start}/>
-				</div>
-			</div>
+					<BtnComponent start={start}  stop={stop} resume={resume} reset={reset}/>
+			</ClockHolder>
 
-        </div>
+        </MainSections>
+		</Body>
     )
 }
 
-export default Stoper
+export default Stoper;
