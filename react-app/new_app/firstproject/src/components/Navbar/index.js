@@ -26,11 +26,16 @@ const NavBar = () => (
                     Characters
                 </NavLink>
 
+                <NavLink to="/login" activeStyle>
+                    Login
+                </NavLink>
+
             </NavMenu>
 
             <NavBtn>
                 <NavBtnLink to='/signin'> Sing In</NavBtnLink>
             </NavBtn>
+            
         </Nav>
     </>
 
