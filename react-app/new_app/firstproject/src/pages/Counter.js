@@ -1,12 +1,12 @@
 import React from 'react'
+import CounterComponent from '../components/Counter/CounterComponent'
 
-const Counter = () => {
+function Counter() {
     return (
-        <div>
-            <h1>Counter</h1>
-            <h2>Licznik</h2>
-        </div>
+        <CounterComponent />
     )
 }
 
 export default Counter
+
+

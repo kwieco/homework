@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import LoginForm from '../components/Login/LoginForm';
+import { NavLink } from 'react-router-dom';
 import {Body, LoginPanelStyle} from '../components/Login/Login.styled'
 
 function LoginPanel() {
@@ -31,11 +32,15 @@ function LoginPanel() {
         <Body>
         <LoginPanelStyle>
             { (user.email != "") ? ( 
+                <NavLink to="/succes-logged">
+                
             <div className='welcome'>  
                 <h2>Welcome, <span>{user.name}</span>
                 </h2>
                 <button onClick={Logout}>Logout</button>  
-            </div> ) : (
+            </div>
+            
+            </NavLink> ) : (
                 <LoginForm  Login={Login} error={error} />
             )}
         </LoginPanelStyle>

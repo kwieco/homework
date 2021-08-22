@@ -10,30 +10,30 @@ const NavBar = () => (
             </NavLink>
             <Bars />
             <NavMenu>
-                <NavLink to="/about" activeStyle>
+                <NavLink to="/about">
                     About
                 </NavLink>
 
-                <NavLink to="/stoper" activeStyle>
+                <NavLink to="/stoper">
                     Stoper
                 </NavLink>
 
-                <NavLink to="/counter" activeStyle>
+                <NavLink to="/counter">
                     Counter
                 </NavLink>
 
-                <NavLink to="/characters" activeStyle>
+                <NavLink to="/characters">
                     Characters
                 </NavLink>
 
-                <NavLink to="/login" activeStyle>
+                <NavLink to="/login">
                     Login
                 </NavLink>
 
             </NavMenu>
 
             <NavBtn>
-                <NavBtnLink to='/signin'> Sing In</NavBtnLink>
+                <NavBtnLink to='/signin'> Rejestracja</NavBtnLink>
             </NavBtn>
             
         </Nav>

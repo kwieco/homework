@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import KamilProject from './App';
 
 
 ReactDOM.render(
 
-    <App />,
+    <KamilProject />,
   document.getElementById('root')
 );
 

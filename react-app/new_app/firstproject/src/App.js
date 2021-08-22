@@ -10,7 +10,7 @@ import Registry from './pages/Registry';
 import Login from './pages/Login';
 
  
-function App() {
+function KamilProject() {
   return (
     <>
     <Router>
@@ -30,4 +30,4 @@ function App() {
   );
 }
 
-export default App;
+export default KamilProject;
