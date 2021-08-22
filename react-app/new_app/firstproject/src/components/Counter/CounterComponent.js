@@ -1,23 +1,36 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 
+export const MainCounterBox = styled.div`
+     display: flex;
+    align-content: stretch;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 
-const ValueComponent = styled.span`
-    display: flex;
-    
-    background: linear-gradient(to bottom, #000000 0%, #ffff00 100%);
+    `
+
+
+const ValueComponent = styled.div`
+    display: grid;
+    background: #000;
+    color: #ffff00;
+    border: 0px solid #ffff00;
+    border-radius: 12px;
     margin-top:20px;  
     padding: 20px;
     width: 50px;
     height: 50px;
     justify-content: center;
     align-items: center;
-    font-family: sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
     font-size: 24px;
 
     `
     
 const ButtonComponent = styled.div`
+    display: grid;
     justify-content: center;
     font-family: sans-serif;
     font-size: 24px;
