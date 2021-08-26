@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Body = styled.body`
-    background: #021e3a;
+    background: #000;
     margin: 0px;
 
 `
@@ -9,27 +9,30 @@ export const MainSections = styled.div`
     background: transparent;
     max-width: 750px;
     width: 90%;
-    height: 500px;
+    height: 500x;
     margin: 30px auto;
 `
  
 export const ClockHolder = styled.div`
     width: 100%;
     margin: 30px auto;
+    padding-top: 20px;
     position: relative;
 `
 export const Stopwatch = styled.div `
-    padding: 60px 0px 0px 0px;
+    margin: 60px;
+    padding: 30px;
     text-align: center;
+    border: 2px solid #FFF;
 `
 
 export const Stopwatch2 = styled.div `
-    padding: 20px 0px;
+    padding: 0px 0px;
     text-align: center;
 `
 export const TimerBox = styled.span `
-        background: #00aba9;
-        color: white;
+        background: #FFFF00;
+        color: black;
         display: inline-block;
         font-family: monospace;
         font-size: 22px;
@@ -45,6 +48,7 @@ export const StopwatchBtnYel = styled.button`
     margin-left: 5px;
     padding: 12px 20px;
     font-size: 16px;
+    font-weight: 700;
     text-transform: uppercase;
     width: 150px;
     transition: background 1s;
@@ -64,6 +68,7 @@ export const StopwatchBtnYel = styled.button`
     margin-left: 5px;
     padding: 12px 20px;
     font-size: 16px;
+    font-weight: 700;
     text-transform: uppercase;
     width: 150px;
     transition: background 1s;
@@ -83,6 +88,7 @@ export const StopwatchBtnYel = styled.button`
     margin-left: 5px;
     padding: 12px 20px;
     font-size: 16px;
+    font-weight: 700;
     text-transform: uppercase;
     width: 150px;
     transition: background 1s;

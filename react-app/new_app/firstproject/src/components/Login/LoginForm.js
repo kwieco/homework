@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {Form,} from '../Login/Login.styled'
+import LockIcon from '@material-ui/icons/Lock';
 
 
 
@@ -18,7 +19,7 @@ function LoginForm( { Login, error }) {
     return (
        <Form onSubmit={submitHandler}>
            <div className='formular'>
-               <h2>Login</h2>
+               <h2> <LockIcon style={{paddingLeft: 3}}/> LOGIN</h2>
                {(error != "") ? (<div className='error'>{error}</div>) : ""}
 
                 <div className='formular-box'>
