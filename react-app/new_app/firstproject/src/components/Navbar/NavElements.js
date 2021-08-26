@@ -9,7 +9,8 @@ export const Nav = styled.nav`
     position: sticky;
     justify-content: space-between;
     padding: 0.5rem calc((100vw - 1000px) /2);
-    z-index: 10;       
+    z-index: 10;
+    position: sticky;       
 `
  
 export const NavLink = styled(Link)`
@@ -21,8 +22,8 @@ export const NavLink = styled(Link)`
     height: 100%;
     cursor: pointer;
 
-    &.active {
-        color: #FFFF00;
+    &:hover {
+        color: 'blue';
     }
 `
 export const Bars = styled(FaBars)`
