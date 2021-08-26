@@ -11,7 +11,7 @@ import LockOpenIcon from '@material-ui/icons/LockOpen';
 
 const NavBar = () => (
     <>
-        <Nav>
+        <Nav style={{position: 'sticky', display: 'fixed'}}>
             <NavLink to='/'>
                 <img src={logo} height='50' alt='logo'/>LOGO
             </NavLink>
@@ -22,7 +22,7 @@ const NavBar = () => (
                 </NavLink>
 
                 <NavLink to="/stoper">
-                    <TimerIcon  style={{ color: 'white', padding: 3,}}/> Stoper
+                    <TimerIcon  style={{ color: 'white', padding: 3,}}/> Stopwatch
                 </NavLink>
 
                 <NavLink to="/counter">
@@ -34,13 +34,13 @@ const NavBar = () => (
                 </NavLink>
 
                 <NavLink to="/login">
-                    <LockOpenIcon  style={{ color: 'white', padding: 3,}}/> Login
+                    <LockOpenIcon  style={{ color: 'white', padding: 3,}}/> Sign In
                 </NavLink>
 
             </NavMenu>
 
             <NavBtn>
-                <NavBtnLink to='/signin'> Rejestracja</NavBtnLink>
+                <NavBtnLink to='/signin'> Sign Up</NavBtnLink>
             </NavBtn>
             
         </Nav>
