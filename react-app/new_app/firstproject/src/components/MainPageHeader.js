@@ -7,8 +7,6 @@ import { Grid, Button } from '@material-ui/core'
 const mainStyle = {
     backImage:{
         backgroundImage:`URL(${buldings})`,
-        width: 1333,
-        height: 512,
         backgroundSize: 'cover',
         padding: 0,
         margin: 0,
@@ -28,7 +26,11 @@ const mainStyle = {
 function MainPageHeader() {
     return (
         <div style={mainStyle.backImage}>
-            
+                <Grid style={{textAlign: 'center'}}>
+                    <h1>Follow your way!</h1>
+                    <h2>Future is in your hands</h2>
+                </Grid>
+
                 <Grid style={mainStyle.buttonPosition}>
                     <Button  variant='contained' color='primary' size='large'>Kliknij i dowiedz się więcej!
                         
