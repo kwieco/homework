@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from 'react'
+import React, {useState } from 'react'
 import styled from 'styled-components'
 
 export const MainCounterBox = styled.div`
@@ -26,11 +26,10 @@ const ValueComponent = styled.div`
     align-items: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
     font-size: 24px;
-
     `
     const ValueComponentGreen = styled.div`
     display: grid;
-    background: #000;
+    background: green;
     color: #ffff00;
     border: 0px solid #ffff00;
     border-radius: 12px;
@@ -71,12 +70,15 @@ function CounterComponent( { defaultValue = 0, step = 1 }) {
     
     const [value, setValue] = useState(defaultValue)
 
-    useEffect(() => {
-        if(value % 5 === 0 && value !== 0) {
-            console.log("jest podzielna") // jak podpiąćpod styl? 
+    const beGreen = () => {
+        if (value % 5 === 0 && value !== 0 ){
+            return <ValueComponentGreen>{value}</ValueComponentGreen>
+        } else {
+            return <ValueComponent>{value}</ValueComponent>
         }
-    }, [value])
-   
+        
+    }
+    
     
 
     const minus = () => {
@@ -94,7 +96,7 @@ function CounterComponent( { defaultValue = 0, step = 1 }) {
      return (
          <>
         
-            <ValueComponent>{value}</ValueComponent>
+            {beGreen()}
             <ButtonComponent> 
 
                 <Button onClick={minus} id='minus'> - </Button>
