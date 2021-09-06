@@ -8,13 +8,14 @@ import Counter from './pages/Counter';
 import Characters from './pages/Characters';
 import Registry from './pages/Registry';
 import Login from './pages/Login';
+import NavigationAppBar from './components/Navbar/NavigationAppBar'
 
  
 function KamilProject() {
   return (
     <>
     <Router>
-      <NavBar/>
+    <NavBar />
       <Switch>
         <Route path='/' exact component={Home} />
         <Route path='/about' component={About} />
@@ -22,10 +23,11 @@ function KamilProject() {
         <Route path='/counter' component={Counter} />
         <Route path='/characters' component={Characters} />
         <Route path='/login' component={Login} />
-        <Route path='/signin' component={Registry} />
+        <Route path='/signin' component={Registry} /> 
 
       </Switch>
     </Router>
+
   </>
   );
 }

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 export const MainCounterBox = styled.div`
@@ -28,6 +28,21 @@ const ValueComponent = styled.div`
     font-size: 24px;
 
     `
+    const ValueComponentGreen = styled.div`
+    display: grid;
+    background: #000;
+    color: #ffff00;
+    border: 0px solid #ffff00;
+    border-radius: 12px;
+    margin-top:20px;  
+    padding: 20px;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    font-size: 24px;
+    `
     
 const ButtonComponent = styled.div`
     display: grid;
@@ -50,11 +65,19 @@ const Button = styled.button`
         color: #000;
     }
     `
+
+
+function CounterComponent( { defaultValue = 0, step = 1 }) {   
     
-
-function CounterComponent( { defaultValue = 0, step = 1 }) {
-
     const [value, setValue] = useState(defaultValue)
+
+    useEffect(() => {
+        if(value % 5 === 0 && value !== 0) {
+            console.log("jest podzielna") // jak podpiąćpod styl? 
+        }
+    }, [value])
+   
+    
 
     const minus = () => {
         setValue(value - step)
@@ -68,13 +91,10 @@ function CounterComponent( { defaultValue = 0, step = 1 }) {
         setValue(0)
     }
     
-
-
-    return (
-        <>
-
+     return (
+         <>
+        
             <ValueComponent>{value}</ValueComponent>
-
             <ButtonComponent> 
 
                 <Button onClick={minus} id='minus'> - </Button>
