@@ -1,31 +1,52 @@
-import { Container, Paper, Grid } from '@material-ui/core'
+import { Container, Grid } from '@material-ui/core'
 import React from 'react'
 import me from '../images/me.png'
 import drangonballBack from '../images/dragonballBack.png'
-import { maxWidth } from '@material-ui/system'
+
+
 
 const mainStyle = {
     backImage:{
         backgroundImage:`URL(${drangonballBack})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: 'cover',
+        display: 'flex',
+        
     },
     mainImage: {
-        borderRadius: 140,},
-    linkStyle: {
-        textDecoration: 'none', 
-        color: 'black',
-    }}
+        borderRadius: 140
+    },
+}
+
+const person = {
+    name: 'Kamil',
+    surname: 'Kwiecień',
+    age: '31',
+    description: `Cześć! Strona na której się znajdujesz była wykonana jako pierwszy projekt React podczas nauki kursu w firmie DevStock.`,
+    
+}
 
 const About = () => {
+    const {name, surname, age, description } = person
+    const myBio = `${name} ${surname}, ${age} lat`
+
+    const text =` ${description}`
+    
     return (
         <div >
             <h1>ABOUT</h1>
             <Container size='sm' style={mainStyle.backImage}>
-                <Grid style={{display: 'flex'}}>
-                    <img src={me} style={mainStyle.mainImage}  alt='AboutMe' />
-                    <h2>Cześć! Mam na imię Kamil. Strona na której się znajdujesz była wykonana
-                         jako pierwszy projekt React podczas nauki kursu w firmie <a href="http://www.devstock.pl" style={mainStyle.linkStyle}>DevStock</a>.</h2>
+            <img src={me} style={mainStyle.mainImage} alt='AboutMe' />
+                <Grid style={{  display: 'flex',
+                                alignContent: 'space-evenly',
+                                alignItems: 'stretch',
+                                justifyItems: 'stretch',
+                                flexWrap: 'wrap',
+                                flexDirection: 'column',}}>
+                    
+                    
+                    <h2 >{text}</h2>
+                    <h2 style={{textAlign: 'right'}}>{myBio} </h2>
                     
                 </Grid>
             </Container>

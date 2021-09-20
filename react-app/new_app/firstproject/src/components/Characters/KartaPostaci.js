@@ -1,7 +1,7 @@
 import React from   'react'
 import styled from 'styled-components';
 
-const Card = styled.div `
+const Card = styled.span `
     background-color: #fff;
     color: #000;
     display: grid;
@@ -10,32 +10,27 @@ const Card = styled.div `
 `
 
 const Picture = styled.img`
-    margin-right: 15px; 
     margin-bottom: 8px; 
     border: 1px solid silver; 
-    background: white; padding: 4px;
+    background: black; 
+    padding: 4px;
     border-radius: 3px;
     box-shadow: 1px 1px 3px silver; 
     `;
 
 const Frame = styled.div `
-    border: 1px solid silver;
-    display: flex;
-    justify-content: center;
-    background: white; padding: 4px;
+    border: 1px solid black;
+    background: white; 
+    padding: 4px;
     max-width: 300px;
     box-shadow: 1px 1px 3px silver;
+    margin-bottom: 12px;
 `
-const TextData = styled.div`
+const TextData = styled.span`
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 15px; 
-    margin-bottom: 8px; 
-    /* width: 350px; */
-    
-    /* border: 1px solid silver; 
-    background: white; padding: 4px;   */
+    flex-direction: column;
+    align-content: space-around;
+    flex-wrap: wrap;
 `;
 
 function KartaPostaci( {name ,image, status, species}) {
