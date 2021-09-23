@@ -1,9 +1,7 @@
 import React, { useState, useEffect} from 'react'
 import ListaPostaci from '../components/Characters/ListaPostaci'
-import { Button } from '@material-ui/core'
+import { Button, MenuItem, Select } from '@material-ui/core'
 import styled from 'styled-components';
-import BasicSelect from '../components/Characters/BasicSelect'
-
 
  
 const ButtonBox = styled.div`
@@ -26,7 +24,7 @@ function Characters() {
     fetch(`https://rickandmortyapi.com/api/character/?page=${page}${selectStatus}`)
         .then(response => response.json())
         .then(data => setPostaci(data))
-        },[page])
+        },[page, selectStatus])
 
 
     if(!postaci) {
@@ -43,20 +41,11 @@ function Characters() {
         setPage(page + 1)
     }
 
-    const options = [
-        { value: '', label: 'All' },
-        { value: '&name=rick&status=Dead', label: 'Dead' },
-        { value: '&name=rick&status=Alive', label: 'Alive' },
-        { value: '&name=rick&status=unknown', label: 'unknown' }
-    
-    ]
+    const handleChange = (event) => {
+        setSelectStatus(event.target.value);
+    };
 
-    const onSelectChange = (e) => {
-        setSelectStatus(e.target.value)
-    }
-    
-
-    console.log(setSelectStatus ,'setSelectStatus')
+    console.log(selectStatus ,'selectStatus')
 return (
     <>
         
@@ -65,9 +54,15 @@ return (
             { postaci.info.next ? (<Button  variant="contained" color="primary" onClick={next}>Next</Button>) : null}  
               
         </ButtonBox> 
-        <BasicSelect  options={options} onChange={onSelectChange}/>
-        <ListaPostaci 
-        postaci={postaci} page={page} /> 
+
+        <Select value={selectStatus} onChange={handleChange} label="Filter">
+          <MenuItem value="">                         <em>All</em>  </MenuItem>
+          <MenuItem value={`&status=Dead`}>    Dead       </MenuItem>
+          <MenuItem value={`&status=Alive`}>   Alive      </MenuItem>
+          <MenuItem value={`&status=unknown`}> unknown    </MenuItem>
+        </Select>
+     
+        <ListaPostaci postaci={postaci} page={page} selectStatus={selectStatus} /> 
     </>
     );
 }

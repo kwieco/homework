@@ -20,7 +20,7 @@ function LoginForm( { Login, error }) {
        <Form onSubmit={submitHandler}>
            <div className='formular'>
                <h2> <LockIcon style={{paddingLeft: 3}}/> LOGIN</h2>
-               {(error != "") ? (<div className='error'>{error}</div>) : ""}
+               {(error !== "") ? (<div className='error'>{error}</div>) : ""}
 
                 <div className='formular-box'>
                     <label htmlFor='email'>Email:</label>

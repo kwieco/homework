@@ -14,7 +14,7 @@ function LoginPanel() {
 
      const Login = details => {
 
-         if (details.email == adminUser.email && details.password == adminUser.password) {
+         if (details.email === adminUser.email && details.password === adminUser.password) {
             setUser({
                 name: details.name,
                 email: details.email,
@@ -31,7 +31,7 @@ function LoginPanel() {
     return (
         <Body>
         <LoginPanelStyle>
-            { (user.email != "") ? ( 
+            { (user.email !== "") ? ( 
                 <NavLink to="/succes-logged">
                 
             <div className='welcome'>  

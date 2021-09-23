@@ -1,0 +1,30 @@
+{
+    "user": [
+            {
+                "id": 1, 
+                "name": "Robert",
+                "surname": "Tarkowski",
+                "login": "Robix90",
+                "email": "admin@admin.pl",
+                "password": "admin"
+            },
+            {
+                "id": 2, 
+                "name": "Robert",
+                "surname": "Tarkowski",
+                "login": "Robix90",
+                "email": "admin@admin.pl",
+                "password": "admin"
+            },
+            {
+                "id": 3, 
+                "name": "Robert",
+                "surname": "Tarkowski",
+                "login": "Robix90",
+                "email": "admin@admin.pl",
+                "password": "admin"
+            }
+
+        
+    ]
+}
