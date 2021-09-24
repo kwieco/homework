@@ -7,7 +7,7 @@ import Stoper from './pages/Stoper';
 import Counter from './pages/Counter';
 import Characters from './pages/Characters';
 import Registry from './pages/Registry';
-import Login from './pages/Login';
+import Loguj from './pages/Loguj';
 
 
  
@@ -22,7 +22,7 @@ function KamilProject() {
         <Route path='/stoper' component={Stoper} />
         <Route path='/counter' component={Counter} />
         <Route path='/characters' component={Characters} />
-        <Route path='/login' component={Login} />
+        <Route path='/login' component={Loguj} />
         <Route path='/signin' component={Registry} /> 
 
       </Switch>

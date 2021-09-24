@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Form,} from '../Login/Login.styled'
+import {Form} from '../Login/Login.styled'
 import LockIcon from '@material-ui/icons/Lock';
 
 
@@ -11,8 +11,7 @@ function LoginForm( { Login, error }) {
 
     const submitHandler = e => {
         e.preventDefault();
-
-        Login(details);
+         Login(details);
     
     }
 
