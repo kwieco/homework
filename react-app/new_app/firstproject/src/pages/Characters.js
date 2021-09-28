@@ -14,6 +14,12 @@ const ButtonBox = styled.div`
     background: rgb(2,0,36);
     background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(255,248,0,1) 29%, rgba(255,248,0,0) 100%);`;
  
+    const CharactersFrame = styled.span `
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    `;
 
 function Characters() {
     const [postaci, setPostaci] = useState(null);
@@ -55,12 +61,14 @@ return (
               
         </ButtonBox> 
 
-        <Select value={selectStatus} onChange={handleChange} label="Filter">
+        <CharactersFrame> Filtruj postacie po:
+        <Select  value={selectStatus} onChange={handleChange} label="Filter">
           <MenuItem value="">                         <em>All</em>  </MenuItem>
           <MenuItem value={`&status=Dead`}>    Dead       </MenuItem>
           <MenuItem value={`&status=Alive`}>   Alive      </MenuItem>
           <MenuItem value={`&status=unknown`}> unknown    </MenuItem>
         </Select>
+        </CharactersFrame>
      
         <ListaPostaci postaci={postaci} page={page} selectStatus={selectStatus} /> 
     </>

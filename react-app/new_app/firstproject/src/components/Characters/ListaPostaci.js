@@ -30,6 +30,7 @@ function ListaPostaci( {postaci, page} ) {
     const changleChangeSwitch = () => {
         setStats(stats => !stats)
     }
+    console.log(postaci.results)
     
 
     return (
@@ -45,12 +46,14 @@ function ListaPostaci( {postaci, page} ) {
             </CharactersFrame>
 
             <CharactersFrame>
+                
                 {postaci.results
                                 .sort((a, b) => (stats? (a.name < b.name ? 1 : -1) : a.name > b.name ? 1 : -1))
-                                .map(({name, species, status, image}) => 
-                            <KartaPostaci name={name} species={species} status={status} image={image} />)
+                                .map(({id, name, species, status, image}) => 
+                            <KartaPostaci id={id} name={name} species={species} status={status} image={image} />)
                 }
             </CharactersFrame>
+    
         </>)
 }        
 

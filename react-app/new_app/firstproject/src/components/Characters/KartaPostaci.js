@@ -1,4 +1,5 @@
 import React from   'react'
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Card = styled.span `
@@ -33,19 +34,27 @@ const TextData = styled.span`
     flex-wrap: wrap;
 `;
 
-function KartaPostaci( {name ,image, status, species}) {
+
+
+function KartaPostaci( {id,name ,image, status, species}) {
+
+        let history = useHistory();
+
+        
 
     return (
         <>
-        <Card> 
-            <Picture src={image} alt={name} />
-            
-            <Frame>
-                <TextData>Name: {name}</TextData>
-                <TextData>Status: {status}</TextData>
-                <TextData>Species: {species}</TextData>
-            </Frame>
-        </Card>
+        <div className='card-container' onClick={() => history.push(`/${id}`)}>
+            <Card> 
+                <Picture src={image} alt={name} />
+                
+                <Frame>
+                    <TextData>Name: {name}</TextData>
+                    <TextData>Status: {status}</TextData>
+                    <TextData>Species: {species}</TextData>
+                </Frame>
+            </Card>
+        </div>
     </>
     )
 }
