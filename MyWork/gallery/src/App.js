@@ -1,11 +1,21 @@
-import React from 'react';
-import PrimarySearchAppBar from './components/Navigation/PrimarySearchAppBar';
-
+import React from "react";
+import NavBar from "./components/Navigation/NavBar";
+import Pokemons from "./Pages/Pokemons";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Arena from "./Pages/Arena";
+import Favourites from "./Pages/Favourites";
 
 function App() {
   return (
     <>
-              <PrimarySearchAppBar />
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route path="/" exact component={Pokemons} />
+          <Route path="/arena" component={Arena} />
+          <Route path="/favourite" component={Favourites} />
+        </Switch>
+      </Router>
     </>
   );
 }
