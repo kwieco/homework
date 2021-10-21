@@ -3,6 +3,8 @@ import CardOfPokemon from '../components3/Card/CardOfPokemon';
 import { getPokemon } from '../components3/pokemon';
 import { Button, Stack } from '@mui/material';
 import { Box, styled } from '@mui/system';
+import { useHistory } from 'react-router';
+
 
 
 const S ={
@@ -16,17 +18,24 @@ const S ={
 };
 
 const BASE_URL = 'https://pokeapi.co/api/v2/pokemon/?limit=15'
+const db_url = 'http://localhost:3000/favourites'
 
 function Pokedex2() {
     const [pokemonData, setPokemonData] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
+    const [isFavourite, setIsFavourite] = useState([])
+    const [favourite, setFavourite] = useState([])
     const [next, setNext] = useState('');
     const [prev, setPrev] = useState('');
     const [loading, setLoading] = useState(true);
     
     
 
-
+const fetchFav = async () => {
+    const result = await fetch(db_url);
+    const data = await result.json();
+    setIsFavourite(data)
+}
       const getAllPokemon = (BASE_URL) => {
         return new Promise((resolve, reject) => {
             fetch(BASE_URL)
@@ -44,8 +53,11 @@ function Pokedex2() {
         await loadPokemon(response.results);
         setLoading(false);
       }
+      fetchFav();
       fetchData();
     }, [])
+
+  
   
     const nextPage = async () => {
       setLoading(true);
@@ -72,9 +84,14 @@ function Pokedex2() {
     const pokemonDetailData = await Promise.all(data.map(async (pokemon) => {
       let singlePokemon = await getPokemon(pokemon);
       return singlePokemon;
+      
     }));
     setPokemonData(pokemonDetailData);
+
+    console.log(pokemonDetailData, 'siiingleee')
   }
+
+
   
     return (
       <>
@@ -91,8 +108,9 @@ function Pokedex2() {
                 <Button variant='contained' color='primary' disabled onClick={nextPage}>Next</Button>}
               </Stack>
               <S.Box>
-                {pokemonData.map((pokemon, i) => {
-                  return <CardOfPokemon key={i} pokemon={pokemon} />
+                {pokemonData.map(( pokemon, i) => {
+                  console.log(pokemon.name, 'poooookkk') 
+                  return <CardOfPokemon  key={i} isFavourite={isFavourite.map(({ id }) => +id)} pokemon={pokemon} />
                 })}
               </S.Box>
 

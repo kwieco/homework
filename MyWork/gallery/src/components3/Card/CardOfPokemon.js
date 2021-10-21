@@ -1,15 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import './PokeCardStyle.css';
+import { useHistory } from 'react-router';
+import { styled } from '@mui/system';
 
-function Card({ pokemon }) {
-    const [liked, setLiked] = useState([]);
 
 
-    console.log(pokemon, 'detailsy')
+
+function Card({ pokemon, isFavourite }) {
+    console.log(isFavourite, 'isFavourite2222')
+    console.log(pokemon.id, 'pokemon22222')
+
+    const [liked, setLiked] = useState(isFavourite)
+
+    const history = useHistory();
+    
     return (
 
-        <div className="card-container"> 
+        <div className="card-container" onClick={() => history.push(`/${pokemon.name}`)}> 
         <div className="img-container"><img src={pokemon.sprites.other.dream_world.front_default} alt={pokemon.name} /></div>
         <div className="title"><h2> {pokemon.name}</h2></div>
         <div className='data-container'>
@@ -36,8 +44,8 @@ function Card({ pokemon }) {
             
         </div>
         
-        {liked === true ?    <div className='like-container'><FavoriteIcon color='error'/></div> : 
-                            <div className='like-container'><FavoriteIcon color='action'/></div>}
+         <div className='like-container'><FavoriteIcon color='error'/></div> 
+         <div className='like-container'><FavoriteIcon color='action'/></div>
     </div>
     );
 }

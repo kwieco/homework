@@ -6,8 +6,10 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { Button, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles';
+import SendIcon from '@mui/icons-material/Send';
+import ArenaCard from '../components3/Card/ArenaCard';
 
-
+ 
 
 const S ={
     Typography: styled(Typography) `
@@ -60,9 +62,28 @@ function Arena() {
                 spacing={2}
                 justifyContent="center"
             >
-                <Item elevation='16'>Pokemon1</Item>
+                <Item elevation='16'>
+        
+                    <ArenaCard />
+
+                </Item>
                 <S.Typography2>VS</S.Typography2>
-                <Item elevation='16'>Pokemon2</Item>
+                <Item elevation='16'>
+                    
+                    <ArenaCard />
+
+                </Item>
+            </Stack>
+            <Stack
+                direction="row"
+                divider={<Divider orientation="vertical" flexItem />}
+                spacing={2}
+                justifyContent="center"
+                margin='30px'
+            >
+                <Button variant="contained" size="large" endIcon={<SendIcon />}>
+                        FIGHT!
+                </Button>
             </Stack>
         </>
     )
