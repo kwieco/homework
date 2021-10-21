@@ -18,7 +18,7 @@ const S ={
 };
 
 const BASE_URL = 'https://pokeapi.co/api/v2/pokemon/?limit=15'
-const db_url = 'http://localhost:3000/favourites'
+const db_url = 'http://localhost:3000/favourites' 
 
 function Pokedex2() {
     const [pokemonData, setPokemonData] = useState([])

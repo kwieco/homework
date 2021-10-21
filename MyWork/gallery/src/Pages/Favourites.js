@@ -29,7 +29,7 @@ function Favourites() {
                 <Button variant="contained" onClick={Back} >Back to Pokemon list</Button>
             </S.Typography>
 
-            <h1>Favourites </h1>
+            <h1>Favourites</h1>
         </div>
     )
 }

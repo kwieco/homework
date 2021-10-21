@@ -16,7 +16,6 @@ const S ={
         margin: 12px;
         justify-content: 'center';
     `,
-
     Typography2: styled(Typography)`
        display: flex;
         align-content: flex-end;

@@ -8,7 +8,7 @@ const S ={
     Typography: styled(Typography) `
         justify-content: 'center';
         margin: 12px;
-        `
+        ` 
 };
 
 

@@ -7,7 +7,6 @@ const ArenaCard = () => {
                 <div ></div>
                 <div ><h2> pokemon.name</h2></div>
                 <div >
-
                     <div>
                         <div >pokemon.height</div>
                         <div >Height</div>

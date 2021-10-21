@@ -49,5 +49,5 @@ function Card({ pokemon, isFavourite }) {
     </div>
     );
 }
-
+ 
 export default Card;
