@@ -69,6 +69,7 @@ const fetchArena = async () => {
       fetchArena();
     }, [])
 
+    console.log('isInFight', isInFight)
   
   
     const nextPage = async () => {

@@ -4,20 +4,14 @@ import './ArenaCardStyle.css';
 
    
 
-function ArenaCard({img, name, height, weight, ability, exp, winner})  {
-    const [loading, setLoading] = useState(null);
-    const [error, setError] = useState(null)
+function ArenaCard({img, name, height, weight, ability, exp})  {
+
     return (
-        <>
-        <div>
-            {loading && <h1>Waiting for pokemon details...</h1>}
-            {error && <h1>Error</h1>}
-        </div>
-            {img &&
+        <>  
             <div className='card-container2'>
                 
                     <div className="img-container" ><img src={img} alt='pokemon'/></div>
-                    <div className="title"><h2>{name}</h2></div>
+                    <div className="title"><h2>{name} </h2></div>
                     <div className='data-container'>
 
                     <div className="single-data">
@@ -42,7 +36,7 @@ function ArenaCard({img, name, height, weight, ability, exp, winner})  {
                         
                     </div>
                 
-            </div>}
+            </div>
         
     </>
     )

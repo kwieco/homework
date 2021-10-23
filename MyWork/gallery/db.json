@@ -8,15 +8,6 @@
       "exp": 178,
       "weight": 320,
       "ability": "compound-eyes"
-    },
-    {
-      "id": 13,
-      "name": "weedle",
-      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/13.svg",
-      "height": 3,
-      "exp": 39,
-      "weight": 32,
-      "ability": "shield-dust"
     }
   ],
   "favourites": [
@@ -37,6 +28,33 @@
       "exp": 64,
       "weight": 69,
       "ability": "overgrow"
+    },
+    {
+      "id": 2,
+      "name": "ivysaur",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg",
+      "height": 10,
+      "exp": 142,
+      "weight": 130,
+      "ability": "overgrow"
+    },
+    {
+      "id": 3,
+      "name": "venusaur",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/3.svg",
+      "height": 20,
+      "exp": 236,
+      "weight": 1000,
+      "ability": "overgrow"
+    },
+    {
+      "id": 4,
+      "name": "charmander",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/4.svg",
+      "height": 6,
+      "exp": 62,
+      "weight": 85,
+      "ability": "blaze"
     }
   ]
 }
