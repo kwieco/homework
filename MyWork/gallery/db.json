@@ -1,13 +1,42 @@
 {
-  "favourites": [
+  "arena": [
     {
-      "name": "venusaur",
-      "id": 3
-      
+      "id": 12,
+      "name": "butterfree",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/12.svg",
+      "height": 11,
+      "exp": 178,
+      "weight": 320,
+      "ability": "compound-eyes"
     },
     {
-      "name": "ivysaur",
-      "id": 2
+      "id": 13,
+      "name": "weedle",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/13.svg",
+      "height": 3,
+      "exp": 39,
+      "weight": 32,
+      "ability": "shield-dust"
+    }
+  ],
+  "favourites": [
+    {
+      "id": 123,
+      "name": "scyther",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/123.svg",
+      "height": 15,
+      "exp": 100,
+      "weight": 560,
+      "ability": "swarm"
+    },
+    {
+      "id": 1,
+      "name": "bulbasaur",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
+      "height": 7,
+      "exp": 64,
+      "weight": 69,
+      "ability": "overgrow"
     }
   ]
 }

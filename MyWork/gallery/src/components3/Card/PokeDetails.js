@@ -29,7 +29,6 @@ function PokeDetails() {
     };
 
     useEffect(() => {
-
         detailPokemon();
     },[])
 
@@ -85,36 +84,7 @@ function PokeDetails() {
                 </div>
                 </div>
                 </>  }
-            
 
-          
-            {/* <div >
-            <div><img src={pokemonDetails.sprites.other.dream_world.front_default} alt={pokemonDetails.name} /></div>
-                <div><h2> {pokemonDetails.name}</h2></div>
-                <div>
-
-                <div >
-                    <div>{pokemonDetails.height}</div>
-                    <div>Height</div>
-                </div>
-
-                <div>
-                    <div>{pokemonDetails.base_experience}</div>
-                    <div>Base Experiance</div>
-                </div>
-
-                <div>
-                    <div>{pokemonDetails.weight}</div>
-                    <div>Weight</div>
-                </div>
-
-                <div >
-                    <div>{pokemonDetails.abilities[0].ability.name}</div>
-                    <div>Ability</div>
-                </div>
-            
-            </div>
-            </div> */}
         </div>
     )
 }

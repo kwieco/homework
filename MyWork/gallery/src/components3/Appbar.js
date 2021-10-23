@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import { Link, Typography } from '@mui/material';
 import PokeLogo from './PokeLogo.png'
-import Search from "./Search";
+import Searcher from "./Searcher";
 
 
 export default function Appbar() {
@@ -16,7 +16,7 @@ export default function Appbar() {
           <Typography variant="h6" components="div" sx={{ flexGrow: 1 }}>
             <Link href='/'><img src={PokeLogo}  height='50' alt='name' /></Link>
           </Typography>
-            <Search/>
+            {/* <Searcher/> */}
           <Button color="inherit" href='/arena'>Arena</Button>
           <Button color="inherit" href='/favourite'>Favourite</Button>
         </Toolbar>

@@ -3,7 +3,8 @@ import CardOfPokemon from '../components3/Card/CardOfPokemon';
 import { getPokemon } from '../components3/pokemon';
 import { Button, Stack } from '@mui/material';
 import { Box, styled } from '@mui/system';
-import { useHistory } from 'react-router';
+import TextField from '@mui/material/TextField';
+import SearchIcon from '@mui/icons-material/Search';
 
 
 
@@ -17,24 +18,34 @@ const S ={
     `
 };
 
-const BASE_URL = 'https://pokeapi.co/api/v2/pokemon/?limit=15'
-const db_url = 'http://localhost:3000/favourites' 
+
+
+const BASE_URL = 'https://pokeapi.co/api/v2/pokemon/?limit=15' 
+const db_fav_url = 'http://localhost:3000/favourites' 
+const db_arena_url = 'http://localhost:3000/arena' 
 
 function Pokedex2() {
     const [pokemonData, setPokemonData] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
     const [isFavourite, setIsFavourite] = useState([])
-    const [favourite, setFavourite] = useState([])
+    const [isInFight, setIsInFight] = useState([])
     const [next, setNext] = useState('');
     const [prev, setPrev] = useState('');
     const [loading, setLoading] = useState(true);
-    
+    const [searchValue, setSearchValue] = useState('')
+
     
 
 const fetchFav = async () => {
-    const result = await fetch(db_url);
+    const result = await fetch(db_fav_url);
     const data = await result.json();
     setIsFavourite(data)
+}
+
+const fetchArena = async () => {
+  const result = await fetch(db_arena_url);
+  const data = await result.json();
+  setIsInFight(data)
 }
       const getAllPokemon = (BASE_URL) => {
         return new Promise((resolve, reject) => {
@@ -55,6 +66,7 @@ const fetchFav = async () => {
       }
       fetchFav();
       fetchData();
+      fetchArena();
     }, [])
 
   
@@ -87,10 +99,7 @@ const fetchFav = async () => {
       
     }));
     setPokemonData(pokemonDetailData);
-
-    console.log(pokemonDetailData, 'siiingleee')
   }
-
 
   
     return (
@@ -101,6 +110,11 @@ const fetchFav = async () => {
             <>
               <Stack spacing={2} direction="row" justifyContent="center">
                 <h2>PAGE: {currentPage}</h2>
+
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <SearchIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+                <TextField id="poke-searcher" label="Find your pokemon" variant="standard"  onChange={(e) => {setSearchValue(e.target.value)}}/>
+              </Box>
               </Stack>
               <Stack spacing={2} direction="row" justifyContent="center">
                 <Button variant='contained' color='primary' onClick={prevPage}>Prev</Button>
@@ -108,9 +122,24 @@ const fetchFav = async () => {
                 <Button variant='contained' color='primary' disabled onClick={nextPage}>Next</Button>}
               </Stack>
               <S.Box>
-                {pokemonData.map(( pokemon, i) => {
-                  console.log(pokemon.name, 'poooookkk') 
-                  return <CardOfPokemon  key={i} isFavourite={isFavourite.map(({ id }) => +id)} pokemon={pokemon} />
+                {pokemonData
+                .filter((pokemon) => {
+                  if(searchValue === '') {
+                    return pokemon
+                  } else if (pokemon.name.toLowerCase().includes(searchValue.toLowerCase())) {
+                    return pokemon
+                  }
+                })
+                
+                .map(( pokemon, i) => {
+
+                  return <CardOfPokemon  
+                  key={i} 
+                  isFavourite={isFavourite.map(({ id }) => +id)}
+                  isInFight={isInFight.map(({id}) => +id)} 
+                  pokemon={pokemon}
+                  
+                   />
                 })}
               </S.Box>
 
