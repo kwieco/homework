@@ -28,9 +28,9 @@ function Card({ pokemon, isFavourite, isInFight}) {
     
 
     useEffect(() => {
-        const isLiked = isFavourite.includes(pokemon.id)
+        const isLiked = isFavourite.includes(pokemon?.id)
         setLike(isLiked)
-        const onFight = isInFight.includes(pokemon.id)
+        const onFight = isInFight.includes(pokemon?.id)
         setFighterPok(onFight)
     }, [])
 
@@ -40,14 +40,15 @@ function Card({ pokemon, isFavourite, isInFight}) {
             )
             setLike(false)
         } else {
+            
            await axios.post(DB_Fav_URL, {
-                id: pokemon.id,
-                name: pokemon.name,
-                img: pokemon.sprites.other.dream_world.front_default,
-                height: pokemon.height,
-                exp: pokemon.base_experience,
-                weight: pokemon.weight,
-                ability: pokemon.abilities[0].ability.name
+                id: pokemon?.id,
+                name: pokemon?.name,
+                img: pokemon?.sprites.other.dream_world.front_default,
+                height: pokemon?.height,
+                exp: pokemon?.base_experience,
+                weight: pokemon?.weight,
+                ability: pokemon?.abilities[0].ability.name
 
 
             })
@@ -60,15 +61,21 @@ function Card({ pokemon, isFavourite, isInFight}) {
             )
             setFighterPok(false)
         } else {
-           await axios.post(`${DB_Arena_URL}/`, {
-                id: pokemon.id,
-                name: pokemon.name,
-                img: pokemon.sprites.other.dream_world.front_default,
-                height: pokemon.height,
-                exp: pokemon.base_experience,
-                weight: pokemon.weight,
-                ability: pokemon.abilities[0].ability.name
+            if(fighterPok.lenght > 2) {
+                return alert("Nie można już dodać pokemonów do Areny. Maksymalna ilość to dwa pokemony")
+
+        } else {
+            await axios.post(`${DB_Arena_URL}/`, {
+                id: pokemon?.id,
+                name: pokemon?.name,
+                img: pokemon?.sprites.other.dream_world.front_default,
+                height: pokemon?.height,
+                exp: pokemon?.base_experience,
+                weight: pokemon?.weight,
+                ability: pokemon?.abilities[0].ability.name
             })
+           
+            }
             setFighterPok(true)
         }
     }

@@ -5,6 +5,7 @@ import { Button, Stack } from '@mui/material';
 import { Box, styled } from '@mui/system';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 
@@ -107,8 +108,14 @@ const fetchArena = async () => {
       <>
         
         <div>
-          {loading ? <h1 style={{ textAlign: 'center' }}>Looking for pokemons...</h1> : (
+          {loading ? 
+          <>
+          <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+          <CircularProgress /> <h1>Loading...</h1>
+          </Box>
+          </> : (
             <>
+            
               <Stack spacing={2} direction="row" justifyContent="center">
                 <h2>PAGE: {currentPage}</h2>
 

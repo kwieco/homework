@@ -64,17 +64,14 @@ function Arena() {
         if(pokemonData.length <2) { return alert("Muszą być dwa pokemony")
         } else {
             if(pokemonData[0].exp*pokemonData[0].weight >= pokemonData[1].exp*pokemonData[1].weight) 
-            {
-                return setWinner(pokemonData[0].name)
+                {
+                    return setWinner(pokemonData[0].name)      
+                } else
+                {    
+                    return setWinner(pokemonData[1].name)
+                }
                 
-                        
-            } else
-            {    
-                return setWinner(pokemonData[1].name)
-            }
-            
-            
-        }
+        } 
         
     }
     
